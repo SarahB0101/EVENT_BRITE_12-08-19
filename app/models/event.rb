@@ -1,27 +1,27 @@
 class Event < ApplicationRecord
 
-	validates :start_date,
-		presence: true,
-		if :not_in_past?
+	# validates :start_date,
+	# 	presence: true,
+	# 	if :not_in_past?
 
-	validates :duration, 
-		presence: true,
-		numericality: {greater_than: 0, only_integer: true}, if :multiple_of_5?
+	# validates :duration, 
+	# 	presence: true,
+	# 	numericality: {greater_than: 0, only_integer: true}, if :multiple_of_5?
 
-	validates :title,
-		presence: true,
-		length: { minimum: 140 }
+	# validates :title,
+	# 	presence: true,
+	# 	length: { minimum: 140 }
 
-	validates :description,
-		presence: true,
-		length: { in: 20..1000 }
+	# validates :description,
+	# 	presence: true,
+	# 	length: { in: 20..1000 }
 
-	validates :price,
-		presence: true,
-		numericality: {only_integer: true, in: 1..1000}
+	# validates :price,
+	# 	presence: true,
+	# 	numericality: {only_integer: true, in: 1..1000}
 
-	validates :location,
-		presence: true	
+	# validates :location,
+	# 	presence: true	
 			
 
 	belongs_to :administrator, foreign_key: 'administrator_id', class_name: 'User'	
@@ -34,18 +34,15 @@ class Event < ApplicationRecord
 
 
 
-	def not_in_past
-    	#self.start_date > Time.now
-    	self.start_date < DateTime.now
-    end
+	# def not_in_past
+ #    	#self.start_date > Time.now
+ #    	self.start_date < DateTime.now
+ #    end
 
 
-    def multiple_of_5
-    	self.duration % 5 == 0
-    end
+ #    def multiple_of_5
+ #    	self.duration % 5 == 0
+ #    end
 
-   #  def end_time
-   #  end_time = start_time + duration * 60
-  	# end
   
 end
