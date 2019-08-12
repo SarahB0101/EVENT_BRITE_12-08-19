@@ -24,20 +24,30 @@ class Event < ApplicationRecord
 	validates :location,
 		presence: true	
 		
-	has_many :attendances
-	has_many :users, through: :attendances
+	
 
-	belongs_to :user
+	belongs_to :administrator, foreign_key: 'administrator_id', class_name: 'User'	
+
+	has_many :attendances
+	has_many :participants, through: :attendances, class_name: "User"
+
+
 
 
 
 
 	def not_in_past
-    	self.start_date > Time.now
+    	#self.start_date > Time.now
+    	self.start_date < DateTime.now
     end
+
 
     def multiple_of_5
     	self.duration % 5 == 0
     end
+
+   #  def end_time
+   #  end_time = start_time + duration * 60
+  	# end
   
 end
