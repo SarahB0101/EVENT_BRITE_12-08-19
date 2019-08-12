@@ -1,26 +1,26 @@
 class UsersController < ApplicationController
 	#before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-	# def index
- #  		@users = User.all
- #  	end
+	 def index
+   		@users = User.all
+   	end
 
-	# def show
-	# 	# @id = params[:id]
-	# 	# @users = User.all.find(@id)
-	# 	# @event = Event.all
-	# end
+	def show
+		# @id = params[:id]
+		# @users = User.all.find(@id)
+		# @event = Event.all
+	end
 
-	# def new
-	# 	@user = User.new
-	# end
+	def new
+		@user = User.new
+	end
 
-	# def create
-	# 	@user = User.new(user_params)
-	# 	if @user.save
-	# 		redirect_to users_path
-	# 	end
-	# end
+	def create
+		@user = User.new(user_params)
+		if @user.save
+			redirect_to users_path
+		end
+	end
 
 
 	# def edit
