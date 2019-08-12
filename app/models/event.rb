@@ -18,13 +18,11 @@ class Event < ApplicationRecord
 
 	validates :price,
 		presence: true,
-		numericality: {only_integer: true, greater_than: 0, less_than: 1000}
-		#length: { in: 1..1000 }
+		numericality: {only_integer: true, in: 1..1000}
 
 	validates :location,
 		presence: true	
-		
-	
+			
 
 	belongs_to :administrator, foreign_key: 'administrator_id', class_name: 'User'	
 
