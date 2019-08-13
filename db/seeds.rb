@@ -15,6 +15,6 @@ end
 	event = Event.create(title: Faker::TvShows::BreakingBad.episode, description: Faker::TvShows::Friends.quote, start_date: Faker::Date.forward(days: 23), duration: rand(60..500), price: rand(1..1000), location: Faker::Address.city, administrator: User.all.sample)
 	participant = User.all.sample
 	stripe_customer_id = ""
-	Attendance.create(stripe_customer_id: stripe_customer_id, participants: participant, event: Event.all.sample)
+	Attendance.create(stripe_customer_id: stripe_customer_id, participant: participant, event: Event.all.sample)
 end
 
