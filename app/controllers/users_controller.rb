@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	#before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	 def index
    		@users = User.all
@@ -23,31 +23,31 @@ class UsersController < ApplicationController
 	end
 
 
-	# def edit
-	# end
+	def edit
+	end
 
-	# def update
-	# 	if @user.update(user_params)
-	# 		redirect_to @user
-	# 	else
-	# 	render :edit	
-	# 	end
-	# end
+	def update
+		if @user.update(user_params)
+			redirect_to @user
+		else
+		render :edit	
+		end
+	end
 
-	# def destroy
-	# 	if @user.destroy
-	# 		redirect_to users_url
-	# 	end
-	# end
+	def destroy
+		if @user.destroy
+			redirect_to users_url
+		end
+	end
 
 	
-	# private
+	private
 
-	# def set_user
- #      @user = User.find(params[:id])
- #    end
+	def set_user
+      @user = User.find(params[:id])
+    end
 
-	# def user_params
- #      params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name)
- #    end
+	def user_params
+      params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name)
+    end
 end

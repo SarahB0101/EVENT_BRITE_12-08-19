@@ -1,0 +1,27 @@
+
+
+
+<section class="card-events">
+  <div class="row">
+    <% Event.all.each do |event| %>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <%= link_to(event_path(event)) do %>
+          <div class="card event-card">     
+            <div class="card-body">
+              <h5 class="card-title"><%= event.title %></h5>
+              <p class="card-text"><%= event.description %></p>
+              <p class="card-text"><%= event.start_date %></p>
+              <aside class="price">
+                <p class="card-text"><strong><%= event.price %>€</strong></p>
+              </aside>
+              <p class="card-text"><%= event.location %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</section>
+
+

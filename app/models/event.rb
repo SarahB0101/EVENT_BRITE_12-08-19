@@ -2,7 +2,8 @@ class Event < ApplicationRecord
 
 	# validates :start_date,
 	# 	presence: true,
-	# 	if :not_in_past?
+	
+	# validate :not_in_past?
 
 	# validates :duration, 
 	# 	presence: true,
